@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "180380166001",
+    "project_id": "starsucks-b57cc",
+    "storage_bucket": "starsucks-b57cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180380166001:android:46872a4c1afbb0fe9c78d0",
+        "android_client_info": {
+          "package_name": "com.example.starsucks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180380166001-cbkj4u1jdpu7bebc8od06rrj85u9mpf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDrjjSunbevQGU661s3LCccgul3P7RfZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180380166001-cbkj4u1jdpu7bebc8od06rrj85u9mpf4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

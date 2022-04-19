@@ -1,13 +1,21 @@
 package com.example.starsucks;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import com.google.android.material.navigation.NavigationView;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     // imageView elements
     private ImageView sb1;
@@ -19,6 +27,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //My public order
     private Order order;
+
+    //Navigation drawer
+    private Toolbar toolbar;
+    private DrawerLayout drawerlayout;
+    private ActionBarDrawerToggle toggleOff;
+
+    //Navigation view
+    private NavigationView navigationView;
 
     @Override
     public void onClick(View v) {
@@ -50,7 +66,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_with_nav_drawer);
+
+        toolbar = findViewById(R.id.nav_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        drawerlayout = findViewById(R.id.drawer_layout);
+        toggleOff = new ActionBarDrawerToggle(this, drawerlayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerlayout.addDrawerListener(toggleOff);
+        toggleOff.syncState();
+
+        navigationView = findViewById(R.id.nav_view);
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
+
         sb1 = findViewById(R.id.sb1);
         sb2 = findViewById(R.id.sb2);
         sb3 = findViewById(R.id.sb3);
@@ -66,5 +98,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sb6.setOnClickListener(this);
 
         order = new Order();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawerlayout.isDrawerOpen(GravityCompat.START)) {
+            drawerlayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_photo:
+                intentHelper.openIntent(this, "", CoffeeSnapsActivity.class);
+                break;
+        }
+        drawerlayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
