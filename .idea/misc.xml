@@ -7,11 +7,12 @@
         <entry key="app/src/main/res/layout/activity_coffee_snaps.xml" value="0.3338541666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35572916666666665" />
-        <entry key="app/src/main/res/layout/activity_main_with_nav_drawer.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/activity_main_with_nav_drawer.xml" value="0.18333333333333332" />
         <entry key="app/src/main/res/layout/activity_order_details.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_order_history.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.33" />
         <entry key="app/src/main/res/layout/nav_header_layout.xml" value="0.12222222222222222" />
-        <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
